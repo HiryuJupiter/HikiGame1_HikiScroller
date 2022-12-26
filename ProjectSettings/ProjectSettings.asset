@@ -663,7 +663,7 @@ PlayerSettings:
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
     Android: TMP;TMP_1_5_1_OR_NEWER
-    Standalone: ODIN_INSPECTOR;ODIN_INSPECTOR_3;TMP;TMP_1_5_1_OR_NEWER
+    Standalone: ODIN_INSPECTOR;ODIN_INSPECTOR_3;TMP;TMP_1_5_1_OR_NEWER;MOREMOUNTAINS_NICEVIBRATIONS_INSTALLED;USING_URP
     WebGL: TMP;TMP_1_5_1_OR_NEWER
   additionalCompilerArguments: {}
   platformArchitecture: {}
