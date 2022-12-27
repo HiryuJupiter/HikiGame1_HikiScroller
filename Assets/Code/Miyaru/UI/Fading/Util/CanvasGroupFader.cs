@@ -68,9 +68,7 @@ public class CanvasGroupFader : MonoBehaviour
     public void FadeTo100()
     {
         fadingTo100 = true;
-
     }
-    public float FadeDuration => (Time.deltaTime * fadeSpeed) / 1f + 0.2f; //Estimated seconds it takes to fade
 
     public void FadeTo0()
     {

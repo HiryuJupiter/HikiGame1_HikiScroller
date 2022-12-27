@@ -5,15 +5,21 @@ using System.Collections;
 
 public class PauseMenuUI : MonoBehaviour
 {
-    public static bool IsPaused = false;
+    //Event
+    public delegate void OnPause(bool isTrue);
+    public static OnPause onPause;
+
+    public static bool IsPaused;
 
     [SerializeField]
+    int menuLevelIndex = 0;
+    [SerializeField]
     float timeBeforeEnabled = 2.5f; //Need to wait for Generic black fader to fade it.
+
 
     //Canvas groups
     [SerializeField] CanvasGroupFader pauseMenu;
     [SerializeField] CanvasGroupFader blackScreen;
-    [SerializeField] Scene MenuScene;
 
     bool interactable;
 
@@ -55,16 +61,15 @@ public class PauseMenuUI : MonoBehaviour
             return;
 
         IsPaused = !IsPaused;
+        onPause?.Invoke(IsPaused);
 
         if (IsPaused)
         {
             pauseMenu.Instant100();
-            Time.timeScale = 0f;
         }
         //Unpause
         else
         {
-            Time.timeScale = 1f;
             pauseMenu.Instant0();
         }
     }
@@ -74,8 +79,8 @@ public class PauseMenuUI : MonoBehaviour
     IEnumerator DoBackToMain()
     {
         blackScreen.FadeTo100();
-        yield return new WaitForSeconds(blackScreen.FadeDuration);
-        SceneManager.LoadScene(0);
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene(menuLevelIndex);
     }
     #endregion
 }

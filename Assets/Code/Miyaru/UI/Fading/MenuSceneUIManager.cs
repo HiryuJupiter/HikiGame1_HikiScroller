@@ -17,6 +17,11 @@ public class MenuSceneUIManager : MonoBehaviour
     {
         anim = GetComponent<Animator>();
 
+        
+    }
+
+    private void Start()
+    {
         cvsMenu.Instant0();
         cvsInfo.Instant0();
         cvsMenu.FadeTo100();
@@ -44,7 +49,7 @@ public class MenuSceneUIManager : MonoBehaviour
     IEnumerator DoQuitGame ()
     {
         blackScreen.FadeTo100();
-        yield return new WaitForSeconds(blackScreen.FadeDuration);
+        yield return new WaitForSeconds(2f);
         Application.Quit();
     }
 }
