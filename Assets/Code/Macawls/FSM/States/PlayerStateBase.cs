@@ -9,36 +9,39 @@ namespace Player.States
         [SerializeField] private AnimationClip clip;
 
         private AnimancerComponent _mAnimancer;
+        private SpriteRenderer _mSpriteRenderer;
+        
+        protected Rigidbody2D Rb2D { get; private set; }
         
         protected const string Stats = "Stats";
         protected const string Variables = "Variables";
-        protected SpriteRenderer SpriteRenderer { get; private set; }
-        protected Rigidbody2D Rb2D { get; private set; }
-
+        protected const string FeedbackEvents = "FeedbackEvents";
+        
         public PlayerStateBase()
         {
             OnStateInit += () =>
             {
                 _mAnimancer = Machine.Runner.Animancer;
                 Rb2D = Machine.Runner.Rb2D;
-                SpriteRenderer = Machine.Runner.SpriteRenderer;
+                _mSpriteRenderer = Machine.Runner.SpriteRenderer;
             };
 
-            Events.StateEnter.AddListener(OnStateEnter);
+            Events.StateEnter.AddListener(PlayStateAnimation);
         }
 
-        private void OnStateEnter()
+        private void PlayStateAnimation()
         {
+            if (!clip) return;
             _mAnimancer.Play(clip);
         }
 
         protected void FlipSprite(float x)
         {
-            SpriteRenderer.flipX = x switch
+            _mSpriteRenderer.flipX = x switch
             {
                 > 0f => false,
                 < 0f => true,
-                _ => SpriteRenderer.flipX
+                _ => _mSpriteRenderer.flipX
             };
         }
     }

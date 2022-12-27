@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Player.States
 {
-    [CreateAssetMenu(fileName = "Run", menuName = "OceanFSM/Player/States/Run", order = 0)]
+    [CreateAssetMenu(fileName = "Run", menuName = "OceanFSM/Player/States/Run")]
     public class Run : PlayerStateBase, IUpdateHandler, IFixedUpdateHandler
     {
         [BoxGroup(Variables)][SerializeField] private Vector2Variable movementInput;

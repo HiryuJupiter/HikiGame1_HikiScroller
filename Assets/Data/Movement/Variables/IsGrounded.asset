@@ -9,17 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f76a04b727336433cb49bbba3dbe9175, type: 3}
-  m_Name: MoveVector
+  m_Script: {fileID: 11500000, guid: 593b70f10d7bb41c78d42c7e8b6609da, type: 3}
+  m_Name: IsGrounded
   m_EditorClassIdentifier: 
-  _developerDescription: gets updated by the intepreter which is attatched to the
-    player input component
+  _developerDescription: Set by the mm trigger on the player. Player becomes grounded
+    when touching the ground layer.
   _id: 
-  _value: {x: 0, y: 0}
+  _value: 0
   _changed: {fileID: 0}
   _changedWithHistory: {fileID: 0}
   _triggerChangedOnOnEnable: 0
   _triggerChangedWithHistoryOnOnEnable: 0
-  _oldValue: {x: 0, y: 0}
-  _initialValue: {x: 0, y: 0}
+  _oldValue: 0
+  _initialValue: 0
   _preChangeTransformers: []
