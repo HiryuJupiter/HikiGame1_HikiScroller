@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Entity : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+public class Entity : MonoBehaviour {
+
+    Stats stats;
+
+    public bool HasStats { get => stats; }
+
+
+    void Awake() {
+        stats = GetComponent<Stats>();
+    } 
+
+    public void TakeDamage(int amount) {
+        if (HasStats) {
+            stats.TakeDamage(amount);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
