@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.macawls.oceanfsm": {
+      "version": "https://github.com/Macawls/OceanFsm.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "ffcdaf5f9d9292727bcf9db68d6e15cdd01399c1"
+    },
     "com.unity.2d.animation": {
       "version": "7.0.7",
       "depth": 1,
