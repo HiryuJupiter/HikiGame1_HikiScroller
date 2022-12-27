@@ -30,13 +30,6 @@ namespace Player.States
             Machine.Runner.StopCoroutine(JumpRoutine());
             Machine.Runner.StartCoroutine(JumpRoutine());
         }
-
-        // runs if we're already in the jump state
-        public void OnJumpInput()
-        {
-            Machine.Runner.StopCoroutine(JumpRoutine());
-            Machine.Runner.StartCoroutine(JumpRoutine());
-        }
         
         // set under the "events" of player input component in inspector
         public void UpdateJumpInput(InputAction.CallbackContext context)

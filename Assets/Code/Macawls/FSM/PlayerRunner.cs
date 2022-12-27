@@ -35,7 +35,7 @@ namespace Player
             }
             else if (Machine.CurrentState is Jump jump)
             {
-                jump.OnJumpInput();
+                jump.OnEnter();
             }
         }
     }
