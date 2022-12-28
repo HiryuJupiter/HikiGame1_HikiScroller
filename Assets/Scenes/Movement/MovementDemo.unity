@@ -708,7 +708,19 @@ MonoBehaviour:
     m_ActionId: 42861b49-e73d-40fd-947b-7807ca7cd6a0
     m_ActionName: Gameplay/Jump[/Keyboard/space]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 628232218}
+        m_TargetAssemblyTypeName: Player.PlayerRunner, Player
+        m_MethodName: OnAttackInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: e2f2243f-6730-4959-b4de-96e2fb499023
     m_ActionName: Gameplay/Attack[/Keyboard/z]
   - m_PersistentCalls:
@@ -751,6 +763,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 396cd014-15f0-43a1-8df1-c77ab054c7b4
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 628232218}
+        m_TargetAssemblyTypeName: Player.PlayerRunner, Player
+        m_MethodName: OnKickInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b44d5453-ec25-4960-b254-31263961c5fd
+    m_ActionName: Gameplay/Kick[/Keyboard/k]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay

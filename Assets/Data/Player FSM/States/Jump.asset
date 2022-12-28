@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc1ebe59a68149ffb9ff8f914914489c, type: 3}
   m_Name: Jump
   m_EditorClassIdentifier: 
-  clip: {fileID: 0}
+  clip: {fileID: 7400000, guid: c847b76e493311b45801e9b0ddecdcb7, type: 2}
   jumpsRemaining: {fileID: 11400000, guid: 04b35fed9ecf9c04788c65c62159f664, type: 2}
   movementInput: {fileID: 11400000, guid: ef2726b301b2f0d42805b4c3212ccb71, type: 2}
   yAxisVelocity: 10

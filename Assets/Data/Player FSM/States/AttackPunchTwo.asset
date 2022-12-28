@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36c6f9f9dd92437287584ce4422f2b06, type: 3}
+  m_Name: AttackPunchTwo
+  m_EditorClassIdentifier: 
+  clip: {fileID: 7400000, guid: 59a8f4dd141026e4a84a0e9a840ba37d, type: 2}
+  attackTime: 0.99
+  nextAttackState: {fileID: 11400000, guid: 9983d0e7853c1774c9255e6f3f82c486, type: 2}

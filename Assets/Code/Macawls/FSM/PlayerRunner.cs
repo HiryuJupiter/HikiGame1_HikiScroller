@@ -38,6 +38,34 @@ namespace Player
                 jump.OnEnter();
             }
         }
+
+        public void OnAttackInput(InputAction.CallbackContext context)
+        {
+            if (!context.performed) return;
+
+            if (Machine.CurrentState is AttackStateBase attack)
+            {
+                attack.OnAttackInput();
+            }
+            else
+            {
+                Machine.TransitionToState<AttackPunchOne>();
+            }
+        }
+        
+        public void OnKickInput(InputAction.CallbackContext context)
+        {
+            if (!context.performed) return;
+
+            if (Machine.CurrentState is AttackStateBase attack)
+            {
+                attack.OnAttackInput();
+            }
+            else
+            {
+                Machine.TransitionToState<AttackKick>();
+            }
+        }
     }
 }
 

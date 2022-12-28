@@ -10,8 +10,10 @@ namespace Player.States
 
         private AnimancerComponent _mAnimancer;
         private SpriteRenderer _mSpriteRenderer;
-        
         protected Rigidbody2D Rb2D { get; private set; }
+        
+        
+        protected AnimancerState AnimancerState { get; private set; }
         
         protected const string Stats = "Stats";
         protected const string Variables = "Variables";
@@ -22,8 +24,8 @@ namespace Player.States
             OnStateInit += () =>
             {
                 _mAnimancer = Machine.Runner.Animancer;
-                Rb2D = Machine.Runner.Rb2D;
                 _mSpriteRenderer = Machine.Runner.SpriteRenderer;
+                Rb2D = Machine.Runner.Rb2D;
             };
 
             Events.StateEnter.AddListener(PlayStateAnimation);
@@ -32,7 +34,7 @@ namespace Player.States
         private void PlayStateAnimation()
         {
             if (!clip) return;
-            _mAnimancer.Play(clip);
+            AnimancerState = _mAnimancer.Play(clip);
         }
 
         protected void FlipSprite(float x)

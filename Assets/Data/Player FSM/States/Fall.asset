@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a8fa5ab0dbb44f885434f9ddf53b9be, type: 3}
   m_Name: Fall
   m_EditorClassIdentifier: 
-  clip: {fileID: 0}
+  clip: {fileID: 7400000, guid: fe4a6d23577f6ea4fa97da37d39b2561, type: 2}
   isGrounded: {fileID: 11400000, guid: 0a6f683eccc9e8245942f955a7147b97, type: 2}
   moveInput: {fileID: 11400000, guid: ef2726b301b2f0d42805b4c3212ccb71, type: 2}
   xAxisVelocity: 5
