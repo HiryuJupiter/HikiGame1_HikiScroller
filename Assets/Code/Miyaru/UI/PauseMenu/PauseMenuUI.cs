@@ -16,7 +16,6 @@ public class PauseMenuUI : MonoBehaviour
     [SerializeField]
     float timeBeforeEnabled = 2.5f; //Need to wait for Generic black fader to fade it.
 
-
     //Canvas groups
     [SerializeField] CanvasGroupFader pauseMenu;
     [SerializeField] CanvasGroupFader blackScreen;
