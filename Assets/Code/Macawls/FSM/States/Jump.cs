@@ -59,11 +59,7 @@ namespace Player.States
             }
             
             yield return new WaitUntil(() => Rb2D.velocity.y < 0);
-
-            if (Machine.CurrentState is not Fall)
-            {
-                Machine.TransitionToState<Fall>();
-            }
+            Machine.TransitionToState<Fall>();
         }
     }
 }

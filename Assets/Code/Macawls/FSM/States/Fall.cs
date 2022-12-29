@@ -39,13 +39,8 @@ namespace Player.States
                 }
                 yield return null;
             }
-
-            if (Machine.CurrentState is not Idle)
-            {
-                Machine.TransitionToState<Idle>();
-            }
-
-           
+            
+            Machine.TransitionToState<Idle>();
         }
 
 
