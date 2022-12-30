@@ -15,5 +15,5 @@ MonoBehaviour:
   clip: {fileID: 7400000, guid: 3d2d7f90bb59397488cd97560c031bd5, type: 2}
   movementInput: {fileID: 11400000, guid: ef2726b301b2f0d42805b4c3212ccb71, type: 2}
   friction: {fileID: 11400000, guid: 11c128a4c81c055498700fcc3470bd22, type: 2}
-  maxSpeed: 5
-  maxAcceleration: 40
+  maxSpeed: 11
+  maxAcceleration: 100

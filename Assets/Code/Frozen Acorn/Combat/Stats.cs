@@ -21,6 +21,8 @@ public class Stats : MonoBehaviour {
 
     [SerializeField]
     UnityEvent onDeath;
+    [SerializeField]
+    UnityEvent onDamageTaken;
 
     void Awake() {
         health = maxHealth;
@@ -29,6 +31,8 @@ public class Stats : MonoBehaviour {
     public void TakeDamage(int damage) {
         if(!IsDead) {
             health -= damage;
+            //Debug.Log(onDamageTaken);
+            onDamageTaken.Invoke();
             if (IsDead) {
                 onDeath.Invoke();
             }

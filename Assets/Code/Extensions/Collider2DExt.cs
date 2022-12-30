@@ -157,10 +157,17 @@ public static class Collider2DExt{
 
 		return targetsHit;
 	}
-	
-	/**
-		Gets the height of a PolygonCollider2D
-	*/
+
+	public static List<T> WithComponent<T>(this List<Collider2D> colliders) where T : Behaviour{
+		List<T> results = new List<T>();
+		foreach(Collider2D col in colliders) {
+			T component = col.gameObject.GetComponent<T>();
+            if (component) {
+				results.Add(component);
+            }
+        }
+		return results;
+    }
 }
 
 

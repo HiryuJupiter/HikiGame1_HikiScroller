@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class PlayerInteractionTrigger : MonoBehaviour
@@ -12,6 +13,10 @@ public class PlayerInteractionTrigger : MonoBehaviour
     public delegate void OnExitHandler();
     public event OnExitHandler OnPlayerExit;
 
+    [SerializeField]UnityEvent onInteract;
+    [SerializeField]UnityEvent onPlayerEnter;
+    [SerializeField]UnityEvent onPlayerExit;
+
     bool playerNear;
 
 
@@ -20,6 +25,7 @@ public class PlayerInteractionTrigger : MonoBehaviour
         if (playerNear && pressedActionKey)
         {
             OnInteract?.Invoke();
+            onInteract.Invoke();
         }
     }
 
@@ -27,9 +33,10 @@ public class PlayerInteractionTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("player entered trigger zone");
+            //Debug.Log("player entered trigger zone");
             playerNear = true;
             OnPlayerEnter?.Invoke();
+            onPlayerEnter.Invoke();
         }
     }
 
@@ -37,12 +44,13 @@ public class PlayerInteractionTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("player exited trigger zone");
+            //Debug.Log("player exited trigger zone");
             playerNear = false;
             OnPlayerExit?.Invoke();
+            onPlayerExit.Invoke();
         }
     }
 
     //(Keyboard.current.jKey.wasPressedThisFrame)
-    bool pressedActionKey => (Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.Return));
+    bool pressedActionKey => Input.GetKeyDown(KeyCode.Return);
 }

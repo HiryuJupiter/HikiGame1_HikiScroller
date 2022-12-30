@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour {
 
-    Stats stats;
+
+    protected Stats stats;
 
     public bool HasStats { get => stats; }
 
@@ -13,7 +14,7 @@ public class Entity : MonoBehaviour {
         stats = GetComponent<Stats>();
     } 
 
-    public void TakeDamage(int amount) {
+    public virtual void TakeDamage(int amount) {
         if (HasStats) {
             stats.TakeDamage(amount);
         }

@@ -12,6 +12,9 @@ namespace Player.States
         private SpriteRenderer _mSpriteRenderer;
         protected Rigidbody2D Rb2D { get; private set; }
         
+        protected float ClipLength {
+            get => clip.length;
+        }
         
         protected AnimancerState AnimancerState { get; private set; }
         

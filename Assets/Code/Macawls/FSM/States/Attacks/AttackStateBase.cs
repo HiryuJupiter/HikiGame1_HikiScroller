@@ -15,6 +15,7 @@ namespace Player.States
 
         public void OnEnter()
         {
+            Machine.Runner.DamageDealer.SetActive(true);
             _mHasAttacked = false;
         }
 
@@ -27,6 +28,7 @@ namespace Player.States
         public void OnExit()
         {
             _mHasAttacked = false;
+            Machine.Runner.DamageDealer.SetActive(false);
         }
 
         public void OnUpdate(float deltaTime)

@@ -16,12 +16,25 @@ namespace Player
         [BoxGroup(Components)] [SerializeField] private AnimancerComponent animancer; 
         [BoxGroup(Components)] [SerializeField] private Rigidbody2D rb2D; 
         [BoxGroup(Components)] [SerializeField] private SpriteRenderer spriteRenderer;
+        [BoxGroup(Components)][SerializeField] private GameObject damageDealer;
 
         [BoxGroup(Variables)] [SerializeField] private IntVariable jumpsRemaining;
 
         public Rigidbody2D Rb2D => rb2D;
         public SpriteRenderer SpriteRenderer => spriteRenderer; 
         public AnimancerComponent Animancer => animancer;
+        public GameObject DamageDealer => damageDealer;
+        
+
+        public void OnDamageReceived() {
+            if(Machine.CurrentState is not Hurt) {
+                Machine.TransitionToState<Hurt>();
+            }else if(Machine.CurrentState is Hurt hurt) {
+                hurt.OnEnter();
+            }
+        }
+
+        
 
         public void OnJumpInput(InputAction.CallbackContext context)
         {

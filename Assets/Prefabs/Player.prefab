@@ -156,6 +156,7 @@ MonoBehaviour:
   animancer: {fileID: 6009156944490003241}
   rb2D: {fileID: 6009156945481516441}
   spriteRenderer: {fileID: 6009156944490003243}
+  damageDealer: {fileID: 0}
   jumpsRemaining: {fileID: 11400000, guid: 04b35fed9ecf9c04788c65c62159f664, type: 2}
 --- !u!1 &6009156944490003253
 GameObject:
@@ -184,7 +185,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6009156944490003253}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -3.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

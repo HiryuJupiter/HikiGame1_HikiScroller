@@ -47,7 +47,11 @@ public static class MonoBehaviourExt{
 
 		mb.DoInOrder(actionOrders);
     }
-	
+
+	public static void DoAsCoroutine(this MonoBehaviour mb, EnumeratorDelegate action) {
+		mb.StartCoroutine(action());
+	}
+
 
 	static IEnumerator OrderedActionCoroutine(MonoBehaviour routineStarter, params EnumeratedDelegate[] actions) {
 		for(int i = 0; i < actions.Length; i++) {
