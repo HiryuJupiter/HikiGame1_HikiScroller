@@ -24,6 +24,7 @@ public class Stats : MonoBehaviour {
     [SerializeField]
     UnityEvent onDamageTaken;
 
+    
     void Awake() {
         health = maxHealth;
     }
