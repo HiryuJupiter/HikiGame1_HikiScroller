@@ -7,6 +7,12 @@ using System.Reflection;
 
 public static class ReflectionHelper{
 	
+	/// <summary>
+	/// Gets all Types which extend from the provided Type.
+	/// </summary>
+	/// <param name="appDomain"></param>
+	/// <param name="type"></param>
+	/// <returns></returns>
 	public static Type[] GetAllDerivedTypes(this AppDomain appDomain, Type type){
 		List<Type> results = new List<Type>();
 		Assembly[] assemblies = appDomain.GetAssemblies();
@@ -20,7 +26,11 @@ public static class ReflectionHelper{
 		}
 		return results.ToArray();
 	}
-	
+	/// <summary>
+	/// Get Types as their names.
+	/// </summary>
+	/// <param name="types"></param>
+	/// <returns></returns>
 	public static string[] TypesAsNames(Type[] types){
 		List<string> names = new List<string>();
 		foreach(Type type in types){

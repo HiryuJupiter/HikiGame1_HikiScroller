@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public static class Collider2DExt{
-    
+
 	/**
 		Clones a Collider2D. 
 		Currently only supports BoxCollider2D, CircleCollider2D and PolygonCollider2D
 	*/
+	static int h;
+	/// <summary>
+	/// Creates a copy of a Collider2D. 
+	/// Currently only supports BoxCollider2D, CircleCollider2D and PolygonCollider2D
+	/// </summary>
+	/// <param name="col"></param>
+	/// <returns></returns>
 	public static Collider2D Clone(this Collider2D col){
 		Collider2D clone = null;
 		if(col as PolygonCollider2D != null){
@@ -33,9 +40,11 @@ public static class Collider2DExt{
 		}
 		return clone;
 	}
-	/**
-		Clones PolygonCollider2D
-	*/
+	/// <summary>
+	/// Creates a copy of the collider.
+	/// </summary>
+	/// <param name="col"></param>
+	/// <returns></returns>
 	private static PolygonCollider2D ClonePolygonCollider(PolygonCollider2D col){
 		GameObject o = new GameObject();
 		o.AddComponent<PolygonCollider2D>();
@@ -47,9 +56,11 @@ public static class Collider2DExt{
 		
 		return pc;
 	}
-	/**
-		Clones an array of Vector2 points
-	*/
+	/// <summary>
+	/// Creates a copy of an array of points.
+	/// </summary>
+	/// <param name="points"></param>
+	/// <returns></returns>
 	private static Vector2[] ClonePoints(Vector2[] points){
 		Vector2[] clone = new Vector2[points.Length];
 		for(int i = 0; i < points.Length; i++){
@@ -59,9 +70,11 @@ public static class Collider2DExt{
 		return clone;
 		
 	}
-	/**
-		Clones a BoxCollider2D
-	*/
+	/// <summary>
+	/// Creates a copy of the collider.
+	/// </summary>
+	/// <param name="col"></param>
+	/// <returns></returns>
 	private static BoxCollider2D CloneBoxCollider(BoxCollider2D col){
 		GameObject o = new GameObject();
 		o.AddComponent<BoxCollider2D>();
@@ -72,10 +85,12 @@ public static class Collider2DExt{
 		
 		return bc;
 	}
-	
-	/**
-		Clones a CircleCollider2D
-	*/
+
+	/// <summary>
+	/// Creates a copy of the collider.
+	/// </summary>
+	/// <param name="col"></param>
+	/// <returns></returns>
 	private static CircleCollider2D CloneCircleCollider(CircleCollider2D col){
 		GameObject o = new GameObject();
 		o.AddComponent<CircleCollider2D>();
@@ -85,9 +100,12 @@ public static class Collider2DExt{
 		return c;
 		
 	}
-	/**
-		Gets the width of a collider
-	*/
+	/// <summary>
+	/// Gets the width of a collider. 
+	/// Currently supports PolygonCollider2D, BoxCollider2D, CircleCollider2D
+	/// </summary>
+	/// <param name="col"></param>
+	/// <returns></returns>
 	public static float Width(this Collider2D col){
 		if(col as PolygonCollider2D != null){
 			return Width(col as PolygonCollider2D);
@@ -99,21 +117,27 @@ public static class Collider2DExt{
 		Debug.Log("Width not supported for this collider: " + col);
 		return 0;
 	}
-	/**
-		Gets the width of BoxCollider2D
-	*/
+	/// <summary>
+	/// Gets the width of the Collider.
+	/// </summary>
+	/// <param name="col"></param>
+	/// <returns></returns>
 	private static float Width(BoxCollider2D col){
 		return col.size.x;
 	}
-	/**
-		Gets the width of CircleCollider2D
-	*/
+	/// <summary>
+	/// Gets the width of the collider.
+	/// </summary>
+	/// <param name="col"></param>
+	/// <returns></returns>
 	private static float Width(CircleCollider2D col){
 		return col.radius * 2;
 	}
-	/**
-		Gets the width of PolygonCollider2D
-	*/
+	/// <summary>
+	/// Gets the width of the collider.
+	/// </summary>
+	/// <param name="col"></param>
+	/// <returns></returns>
 	private static float Width(PolygonCollider2D col){
 		Vector2[] points = col.points;
 		float smallest = Mathf.Infinity;
@@ -130,15 +154,20 @@ public static class Collider2DExt{
 		return largest - smallest;
 	}
 
-	/**
-		Gets the other colliders that this one hit
-	*/
+	/// <summary>
+	/// Gets a list of colliders that are colliding with this one.
+	/// </summary>
+	/// <param name="collider"></param>
+	/// <returns></returns>
 	public static List<Collider2D> GetHits(this Collider2D collider) {
 		return collider.GetHits(100);
 	}
-	/**
-		Gets the other colliders that this one hit
-	*/
+	/// <summary>
+	/// Gets a list of colliders that are colliding with this one.
+	/// </summary>
+	/// <param name="collider"></param>
+	/// <param name="maxHits"></param>
+	/// <returns></returns>
 	public static List<Collider2D> GetHits(this Collider2D collider, int maxHits) {
 		Collider2D[] res = new Collider2D[maxHits];
 
@@ -157,7 +186,12 @@ public static class Collider2DExt{
 
 		return targetsHit;
 	}
-
+	/// <summary>
+	/// Get a list of a specified component from colliders that have that component.
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
+	/// <param name="colliders"></param>
+	/// <returns></returns>
 	public static List<T> WithComponent<T>(this List<Collider2D> colliders) where T : Behaviour{
 		List<T> results = new List<T>();
 		foreach(Collider2D col in colliders) {

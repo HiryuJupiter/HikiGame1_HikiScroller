@@ -4,7 +4,11 @@ using UnityEngine;
 using System;
 
 public static class SpriteExt{
-	
+	/// <summary>
+	/// Converts the Sprite to a Texture2D
+	/// </summary>
+	/// <param name="sprite"></param>
+	/// <returns></returns>
 	public static Texture2D AsTexture(this Sprite sprite){
 		if(sprite.texture.isReadable) {
 			Texture2D croppedTexture = new Texture2D(sprite.GetWidth(),
@@ -25,7 +29,12 @@ public static class SpriteExt{
 		
 		return null;
 	}
-	
+	/// <summary>
+	/// Creates a new Sprite by fusing this one with another Sprite.
+	/// </summary>
+	/// <param name="s"></param>
+	/// <param name="s2"></param>
+	/// <returns></returns>
 	public static Sprite Fuse(this Sprite s, Sprite s2){
 		Texture2D mainTex = new Texture2D(Mathf.Max(s.GetWidth(),s2.GetWidth()), Math.Max(s.GetHeight(), s2.GetHeight()));
 		s.DrawToTexture(mainTex, Vector2Int.zero);
@@ -33,11 +42,20 @@ public static class SpriteExt{
 		mainTex.Apply();
 		return mainTex.AsSprite();
 	}
-	
+	/// <summary>
+	/// Draws this Sprite onto a Texture2D.
+	/// </summary>
+	/// <param name="s"></param>
+	/// <param name="tex"></param>
 	public static void DrawToTexture(this Sprite s, Texture2D tex){
 		s.DrawToTexture(tex, Vector2Int.zero);
 	}
-	
+	/// <summary>
+	/// Draws this Sprite onto a Texture2D.
+	/// </summary>
+	/// <param name="s"></param>
+	/// <param name="tex"></param>
+	/// <param name="offset"></param>
 	public static void DrawToTexture(this Sprite s, Texture2D tex, Vector2Int offset){
 		int xOffset = offset.x;
 		int yOffset = offset.y;
@@ -50,15 +68,29 @@ public static class SpriteExt{
 			}
 		}
 	}
-	
+	/// <summary>
+	/// Gets the width of the Sprite.
+	/// </summary>
+	/// <param name="s"></param>
+	/// <returns></returns>
 	public static int GetWidth(this Sprite s){
 		return (int)s.rect.width;
 	}
-	
+	/// <summary>
+	/// Gets the height of the Sprite.
+	/// </summary>
+	/// <param name="s"></param>
+	/// <returns></returns>
 	public static int GetHeight(this Sprite s){
 		return (int)s.rect.height;
 	}
-	
+	/// <summary>
+	/// Gets the Color of a pixel in the Sprite.
+	/// </summary>
+	/// <param name="s"></param>
+	/// <param name="x"></param>
+	/// <param name="y"></param>
+	/// <returns></returns>
 	public static Color GetPixel(this Sprite s, int x, int y){
 		return s.texture.GetPixel((int)s.rect.x + x, (int)s.rect.y + y);
 	}

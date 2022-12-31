@@ -4,9 +4,14 @@ using UnityEngine;
 
 public static class RectExt{
 	
-	/**
-		Direction should be a constant from Vector2, left, right, down, up
-	*/
+	
+
+	/// <summary>
+	/// Extend the size of the Rect in a given direction. Direction should be a constant from Vector2.left, Vector2.right, Vector2.up, Vector2.down
+	/// </summary>
+	/// <param name="rect"></param>
+	/// <param name="direction"></param>
+	/// <returns></returns>
 	public static Rect Extend(this Rect rect, Vector2 direction){
 		
 		if(direction == Vector2.left){
@@ -21,12 +26,23 @@ public static class RectExt{
 		
 		return rect;
 	}
-
+	/// <summary>
+	/// Move the RectInt
+	/// </summary>
+	/// <param name="rect"></param>
+	/// <param name="dx"></param>
+	/// <param name="dy"></param>
+	/// <returns></returns>
 	public static RectInt Move(this RectInt rect, int dx, int dy) {
 
 		return new RectInt(rect.x + dx, rect.y + dy, rect.width, rect.height);
     }
-
+	/// <summary>
+	/// Extend the size of the RectInt in a given direction. Direction should be a constant from Vector2.left, Vector2.right, Vector2.up, Vector2.down
+	/// </summary>
+	/// <param name="rect"></param>
+	/// <param name="direction"></param>
+	/// <returns></returns>
 	public static RectInt Extend(this RectInt rect, Vector2 direction) {
 
 		if(direction == Vector2.left) {
@@ -41,7 +57,11 @@ public static class RectExt{
 
 		return rect;
 	}
-
+	/// <summary>
+	/// Grow the Rect by one in each Direction
+	/// </summary>
+	/// <param name="rect"></param>
+	/// <returns></returns>
 	public static Rect Grow(this Rect rect) {
 		Vector2[] dirs = { Vector2.left, Vector2.right, Vector2.up, Vector2.down };
 
@@ -51,11 +71,20 @@ public static class RectExt{
         }
 		return result;
     }
-
+	/// <summary>
+	/// Create a copy of the Rect
+	/// </summary>
+	/// <param name="rect"></param>
+	/// <returns></returns>
 	public static Rect Copy(this Rect rect) {
 		return new Rect(rect.x, rect.y, rect.width, rect.height);
     }
-
+	/// <summary>
+	/// Grow the Rect by a given amount in every direction.
+	/// </summary>
+	/// <param name="rect"></param>
+	/// <param name="times"></param>
+	/// <returns></returns>
 	public static Rect Grow(this Rect rect, int times) {
 		
 		Rect result = rect;
@@ -64,7 +93,12 @@ public static class RectExt{
         }
 		return result;
     }
-
+	/// <summary>
+	/// Grow the RectInt by a given amount in every direction.
+	/// </summary>
+	/// <param name="rect"></param>
+	/// <param name="times"></param>
+	/// <returns></returns>
 	public static RectInt Grow(this RectInt rect, int times) {
 
 		RectInt result = rect;
@@ -73,6 +107,11 @@ public static class RectExt{
 		}
 		return result;
 	}
+	/// <summary>
+	/// Grow the RectInt by one in every direction.
+	/// </summary>
+	/// <param name="rect"></param>
+	/// <returns></returns>
 	public static RectInt Grow(this RectInt rect) {
 		Vector2[] dirs = { Vector2.left, Vector2.right, Vector2.up, Vector2.down };
 
@@ -82,7 +121,11 @@ public static class RectExt{
 		}
 		return result;
 	}
-
+	/// <summary>
+	/// Shrink the Rect by 1.
+	/// </summary>
+	/// <param name="rect"></param>
+	/// <returns></returns>
 	public static Rect ShrinkIn(this Rect rect){
 		float x = rect.x + 1;
 		float y = rect.y + 1;
@@ -91,7 +134,12 @@ public static class RectExt{
 		
 		return new Rect(x,y,width,height);
 	}
-
+	/// <summary>
+	/// Shrink the Rect by a given amount.
+	/// </summary>
+	/// <param name="rect"></param>
+	/// <param name="amount"></param>
+	/// <returns></returns>
 	public static Rect ShrinkBy(this Rect rect, float amount) {
 		float x = rect.x + amount;
 		float y = rect.y + amount;
@@ -107,20 +155,42 @@ public static class RectExt{
         }
 		return result;
     }
-
+	/// <summary>
+	/// Check if the Rect contains a position.
+	/// </summary>
+	/// <param name="rect"></param>
+	/// <param name="x"></param>
+	/// <param name="y"></param>
+	/// <returns></returns>
 	public static bool ContainsInt(this Rect rect, int x, int y) {
 		return x >= rect.x && y >= rect.y && x < rect.x + rect.width && y < rect.y + rect.height; 
     }
+
+	/// <summary>
+	/// Check if the RectInt contains a position.
+	/// </summary>
+	/// <param name="rect"></param>
+	/// <param name="x"></param>
+	/// <param name="y"></param>
+	/// <returns></returns>
 	public static bool Contains(this RectInt rect, int x, int y) {
 		return x >= rect.x && y >= rect.y && x < rect.x + rect.width && y < rect.y + rect.height; 
     }
-	
+	/// <summary>
+	/// Get a Random Point within the Rect
+	/// </summary>
+	/// <param name="rect"></param>
+	/// <returns></returns>
 	public static Vector2 RandomPoint(this Rect rect){
 		float x = Random.Range(rect.x, rect.x + rect.width-1);
 		float y = Random.Range(rect.y, rect.y + rect.height-1);
 		return new Vector2(x,y);
 	}
-	
+	/// <summary>
+	/// Get a Random Point within the RectInt
+	/// </summary>
+	/// <param name="rect"></param>
+	/// <returns></returns>
 	public static Vector2Int RandomIntPoint(this Rect rect){
 		Vector2 r = rect.RandomPoint();
 		return new Vector2Int((int)r.x, (int)r.y);

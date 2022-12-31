@@ -4,7 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public static class ArrayExt {
-
+    /// <summary>
+    /// Perform an action for each element in the array.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="array"></param>
+    /// <param name="action"></param>
     public static void ForEach<T>(this T[] array, Action<T> action) {
         for(int i = 0; i < array.Length; i++) {
             action.Invoke(array[i]);
