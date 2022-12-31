@@ -26,6 +26,7 @@ public class PlayerInteractionTrigger : MonoBehaviour
         {
             OnInteract?.Invoke();
             onInteract.Invoke();
+            SfxManager.Instance?.Play_UISelect();
         }
     }
 

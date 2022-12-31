@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CanvasGroupFader : MonoBehaviour
 {
     [SerializeField] bool fadeInOnStart;
     [SerializeField] bool fadeOutOnStart;
 
+    [SerializeField] float initialFadeWaitTime = 0.5f;
     [SerializeField] float fadeSpeed = 1f;
 
     bool fadingTo0;
@@ -25,20 +27,25 @@ public class CanvasGroupFader : MonoBehaviour
         if (fadeInOnStart)
         {
             Instant0();
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(initialFadeWaitTime);
             FadeTo100();
         }
 
         if (fadeOutOnStart)
         {
             Instant100();
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(initialFadeWaitTime);
             FadeTo0();
         }
     }
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Period))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
         if (fadingTo0)
         {
             if (cvsGrp.alpha > 0)

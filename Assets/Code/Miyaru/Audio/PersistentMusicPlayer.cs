@@ -16,19 +16,19 @@ public class PersistentMusicPlayer : MonoBehaviour
     bool fadeToSilence;
 
 
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else if (Instance != this)
-        {
-            DestroyImmediate(gameObject);
-        }
+    //private void Awake()
+    //{
+    //    if (Instance == null)
+    //    {
+    //        Instance = this;
+    //    }
+    //    else if (Instance != this)
+    //    {
+    //        DestroyImmediate(gameObject);
+    //    }
 
-        source = GetComponent<AudioSource>();
-    }
+    //    source = GetComponent<AudioSource>();
+    //}
 
     private void Update()
     {
