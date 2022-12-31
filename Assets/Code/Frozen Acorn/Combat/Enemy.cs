@@ -23,6 +23,12 @@ public class Enemy : Entity {
     public float knockbackForce = 3;
     public float spawnTime = 0.6f;
     bool spawned = true;
+    public AudioSource audioSource;
+    public AudioClip attackSFX;
+    public AudioClip ambientSFX;
+
+    private float pitch;
+    float lastAmbientTime;
 
     public void DamageFeedback() {
         if (stats.IsDead) {
@@ -36,21 +42,32 @@ public class Enemy : Entity {
         if (!target) {
             target = GameObject.FindGameObjectWithTag("Player")?.GetComponent<Entity>();
         }
+        pitch = Random.Range(0.5f, 1.5f);
         StartCoroutine(Spawn());
     }
-    IEnumerator Spawn() {
-        _2dxFX_Smoke smoke = GetComponent<_2dxFX_Smoke>();
-        float timePassed = 0;
-        float startingValue = smoke._Value2;
-        while(smoke._Value2 > 0) {
-            smoke._Value2 = Mathf.Lerp(startingValue, 0, timePassed / spawnTime);
-            timePassed += Time.deltaTime;
-            yield return new WaitForEndOfFrame();
-        }
 
-        spawned = true;
-        Destroy(smoke);
-        gameObject.AddComponent<_2dxFX_DestroyedFX>().Destroyed = 0;
+    void PlaySound(AudioClip sfx) {
+        audioSource.pitch = pitch;
+        audioSource.PlayOneShot(sfx);
+    }
+
+    IEnumerator Spawn() {
+        if (GetComponent<Stats>().IsDead) {
+            Destroy(gameObject);
+        } else {
+            _2dxFX_Smoke smoke = GetComponent<_2dxFX_Smoke>();
+            float timePassed = 0;
+            float startingValue = smoke._Value2;
+            while (smoke._Value2 > 0) {
+                smoke._Value2 = Mathf.Lerp(startingValue, 0, timePassed / spawnTime);
+                timePassed += Time.deltaTime;
+                yield return new WaitForEndOfFrame();
+            }
+
+            spawned = true;
+            Destroy(smoke);
+            gameObject.AddComponent<_2dxFX_DestroyedFX>().Destroyed = 0;
+        }
     }
     void OnDisable() {
         this.StopAllCoroutines();
@@ -62,6 +79,7 @@ public class Enemy : Entity {
         isAttacking = true;
         animator.SetTrigger("Attack");
         attackDamageDealer.gameObject.SetActive(true);
+        PlaySound(attackSFX);
         yield return StartCoroutine(WaitForCurrentClipToEnd());
         if (attackInterrupted) {
             attackInterrupted = false;
@@ -72,9 +90,11 @@ public class Enemy : Entity {
     }
 
     void Update() {
+        
         if (!spawned) {
             return;
         }
+        lastAmbientTime += Time.deltaTime;
         if (!isAttacking) {
             lastAttackTime += Time.deltaTime;
         }
@@ -92,6 +112,10 @@ public class Enemy : Entity {
             } else {
                 //Move towards Target
                 MoveTowardsTarget();
+                if(lastAttackTime > 2 && lastAmbientTime > 3) {
+                    PlaySound(ambientSFX);
+                    lastAmbientTime = 0;
+                }
             }
         } else {
             //Idle
