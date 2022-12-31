@@ -25,6 +25,7 @@ namespace Player.States
 
         private InputAction.CallbackContext JumpInputContext { get; set; }
 
+
         public void OnEnter()
         {
             Machine.Runner.StopCoroutine(JumpRoutine());

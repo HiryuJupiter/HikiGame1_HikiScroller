@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5259659506476901953}
   - component: {fileID: 5259659506476901952}
+  - component: {fileID: 721439683}
   m_Layer: 0
   m_Name: '#SfxManager'
   m_TagString: Untagged
@@ -44,14 +45,143 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5f6092e1e5cd0847a8a144ddf9081da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UI_Select: {fileID: 3231248140941405131, guid: d1f5ec0d104b499419ffec716c84423e, type: 3}
-  UI_Back: {fileID: 2239534186773279813, guid: 2272e8da88c95434e9e3d6ade3c52d7e, type: 3}
-  UI_Confirm: {fileID: 3885566961540561930, guid: 56c12f6fd5fcb1d4c9b5babe3a5f5741, type: 3}
-  UI_Click: {fileID: 4431355120596540613, guid: 3ddc4090d5e2dd0478087e787e396fda, type: 3}
-  UI_Flick: {fileID: 7188305383995378174, guid: 982e4d7e6e2b4664493fc1d40088853e, type: 3}
-  UI_Pop: {fileID: 509983153801497601, guid: ad6bb0a89cf22864594eb94d81f8cfee, type: 3}
-  UI_KeyboardKey: {fileID: 2470447784845302051, guid: e06ce40bf570576499e34f5cf896c358, type: 3}
-  UI_SoftAlarm: {fileID: 2844499238480812787, guid: d1adf667bb87d054eaafd883d8043f36, type: 3}
+  audioSource: {fileID: 721439683}
+  UI_Select: {fileID: 8300000, guid: eddce5e3d64e25841bce582217e0e5b9, type: 3}
+  Hiki_Run:
+  - {fileID: 8300000, guid: 5cd45c577435c4644813ed207ede742f, type: 3}
+  - {fileID: 8300000, guid: 831798ee49b9034499d79fb3e28ffc52, type: 3}
+  - {fileID: 8300000, guid: 5251522aa7bc5a948b34fdbc44520df8, type: 3}
+  - {fileID: 8300000, guid: a694a36189ab81c4988b159d4d499dc4, type: 3}
+  - {fileID: 8300000, guid: 60ef507086aa46b45aa2aa6bfa1e2a4b, type: 3}
+  - {fileID: 8300000, guid: 3da97f0bea76b4944858188fe3b0e1c2, type: 3}
+  - {fileID: 8300000, guid: 90fd27f06b08195419ed569524ea73a0, type: 3}
+  - {fileID: 8300000, guid: bbed79ed60522494abe3c4cf6118a7a6, type: 3}
+  - {fileID: 8300000, guid: d58e1e9fc978cd145a9709490036ca99, type: 3}
+  - {fileID: 8300000, guid: 4ddac5e8d42a0d14792828ddf0c03212, type: 3}
+  - {fileID: 8300000, guid: 05b6b8f16c7a179418cb3e64fe9051e8, type: 3}
+  - {fileID: 8300000, guid: 73991876d6f73b94fa35fc0a1d69e244, type: 3}
+  - {fileID: 8300000, guid: e3fef0cdfa0f4d540bcf6b70c546ff88, type: 3}
+  - {fileID: 8300000, guid: 30e47ee116cf56a42a3d936e5ffbbbc3, type: 3}
+  - {fileID: 8300000, guid: 7b56a6dbe436b794b97cab0869dc77cc, type: 3}
+  Hiki_Walk:
+  - {fileID: 8300000, guid: b1d33bd9603bcfb4dbd432b83cf9cd29, type: 3}
+  - {fileID: 8300000, guid: abc213459523f3844835c3d7fd155adf, type: 3}
+  - {fileID: 8300000, guid: 11f0454028cbbcb4d9d59bd948f4aebd, type: 3}
+  - {fileID: 8300000, guid: 9238be773f2f2e94da61097081b6bfdc, type: 3}
+  - {fileID: 8300000, guid: 87856d100750f624990dbc96a23c6f85, type: 3}
+  - {fileID: 8300000, guid: 19f92cdb8cde4364c93aee5c10b54d3d, type: 3}
+  - {fileID: 8300000, guid: 8b74c555607047d42a5142516ca7c59f, type: 3}
+  - {fileID: 8300000, guid: 37800ddf93903c142a75cb5a5eb9b787, type: 3}
+  - {fileID: 8300000, guid: 876636a8bd43e17449b351d362ec4e95, type: 3}
+  - {fileID: 8300000, guid: 65e365390d21e0547af9077984b6b4e4, type: 3}
+  - {fileID: 8300000, guid: 1eac673db060e2243a6aa970d98758fc, type: 3}
+  - {fileID: 8300000, guid: a90a1c0d721f09248a862d55d6c542f2, type: 3}
+  - {fileID: 8300000, guid: 9c333040d7207ba489477feb493dad0c, type: 3}
+  - {fileID: 8300000, guid: 1ea0fd01187b97a4f9cb6b766d111dad, type: 3}
+  - {fileID: 8300000, guid: 7a3175582d5d04f42b3684def0e9aaba, type: 3}
+  Hiki_Punch: {fileID: 8300000, guid: 997d8621662c5784186c0c6e37a2d79d, type: 3}
+  Hiki_Kick: {fileID: 8300000, guid: df941184394ba7449aa8eec3c675b12a, type: 3}
+  Hiki_Jump: {fileID: 8300000, guid: 411e7ffbae2b68e4da58ebc46a2458e1, type: 3}
+  Hiki_Land: {fileID: 8300000, guid: 1ec275c3fe03eb44790fe759d66c7eb0, type: 3}
+  Hiki_Hurt: {fileID: 8300000, guid: 87742a0eb7767244883a30d51ca54fc4, type: 3}
+  Hiki_Slide: {fileID: 8300000, guid: dc77ce89ce6f86f47a71b424dceabc9b, type: 3}
+  Hiki_Recover: {fileID: 8300000, guid: 1ec275c3fe03eb44790fe759d66c7eb0, type: 3}
   SongSource: {fileID: 0}
   CreditSong: {fileID: 0}
   CreditName: 
+--- !u!82 &721439683
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5259659506476901955}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

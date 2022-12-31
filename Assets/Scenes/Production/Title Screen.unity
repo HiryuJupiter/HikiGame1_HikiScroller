@@ -353,7 +353,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4c8056bde5a65d74388de200ddd61009, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 75b3d5a6826098048b46e20748536259, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -491,6 +491,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1787168463}
   - component: {fileID: 1787168462}
+  - component: {fileID: 1787168464}
   m_Layer: 0
   m_Name: BG (1)
   m_TagString: Untagged
@@ -540,7 +541,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 11653e4f660ddac4eabbc278b9ddf99b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -558,13 +559,33 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1787168461}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.18, y: 1.43, z: 0}
+  m_LocalPosition: {x: 4.27, y: 1.43, z: 0}
   m_LocalScale: {x: 2.3045652, y: 2.3045652, z: 2.3045652}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1787168464
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787168461}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 07f36c2233a646e4b93a0469401b868e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2086638061
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,6 +734,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 190
       objectReference: {fileID: 0}
+    - target: {fileID: 7403296613654835539, guid: 5ff7b3b0cf89df3459563e2a3e8fbbe5, type: 3}
+      propertyPath: m_Text
+      value: DESIGNERS
+      objectReference: {fileID: 0}
     - target: {fileID: 7403296613782845287, guid: 5ff7b3b0cf89df3459563e2a3e8fbbe5, type: 3}
       propertyPath: m_Text
       value: 'l5hope
@@ -755,6 +780,10 @@ PrefabInstance:
     - target: {fileID: 7403296614455457648, guid: 5ff7b3b0cf89df3459563e2a3e8fbbe5, type: 3}
       propertyPath: fadeOutOnStart
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033804733002851864, guid: 5ff7b3b0cf89df3459563e2a3e8fbbe5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 97
       objectReference: {fileID: 0}
     - target: {fileID: 9033804733002851865, guid: 5ff7b3b0cf89df3459563e2a3e8fbbe5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -856,13 +885,41 @@ PrefabInstance:
       propertyPath: m_Alpha
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9033804733835522734, guid: 5ff7b3b0cf89df3459563e2a3e8fbbe5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -194.73996
+      objectReference: {fileID: 0}
     - target: {fileID: 9033804733835522735, guid: 5ff7b3b0cf89df3459563e2a3e8fbbe5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 9033804733935448769, guid: 5ff7b3b0cf89df3459563e2a3e8fbbe5, type: 3}
       propertyPath: m_Text
-      value: HIKISAN GENKI?
+      value: hikisan no kage
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033804733935448775, guid: 5ff7b3b0cf89df3459563e2a3e8fbbe5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6688232
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033804733935448775, guid: 5ff7b3b0cf89df3459563e2a3e8fbbe5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6688232
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033804733935448775, guid: 5ff7b3b0cf89df3459563e2a3e8fbbe5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6688232
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033804733935448775, guid: 5ff7b3b0cf89df3459563e2a3e8fbbe5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 832
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033804733935448775, guid: 5ff7b3b0cf89df3459563e2a3e8fbbe5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 291
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033804734211970970, guid: 5ff7b3b0cf89df3459563e2a3e8fbbe5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -48.999977
       objectReference: {fileID: 0}
     - target: {fileID: 9033804734211970975, guid: 5ff7b3b0cf89df3459563e2a3e8fbbe5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -898,10 +955,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9033804734378178461, guid: 5ff7b3b0cf89df3459563e2a3e8fbbe5, type: 3}
       propertyPath: m_Text
-      value: 'This is a game created by the talented members from r/hikikomori in
-        5 days.
+      value: 'This is a game created by members from r/hikikomori in 5 days.
 
-        Thank you for playing and we hope you enjoyed it ^ ^
+        Thank
+        you for playing and we hope you enjoyed it ^ ^
+
+        Did you find the
+        easter egg?
 
 '
       objectReference: {fileID: 0}
