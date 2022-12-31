@@ -35,9 +35,17 @@ public class EndScrollTextManager : MonoBehaviour
         else //Reached end
         {
             textWindow.Close();
-            blackScreenFader.FadeTo100();
+            blackScreenFader?.FadeTo100();
+            StartCoroutine(BackToMenu());
         }
     }
+
+    IEnumerator BackToMenu()
+    {
+        yield return new WaitForSeconds(1f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+    }
+
 
     bool canRead => textWindow != null && sentences.Length > 0 && currentIndex < sentences.Length;
 }

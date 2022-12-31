@@ -10,6 +10,10 @@ public class SfxManager : MonoBehaviour
     {
         Instance = this;
     }
+    public GameObject UI_Select;
+
+
+
 
     public GameObject UI_Click;
     public GameObject UI_Flick;
@@ -22,6 +26,8 @@ public class SfxManager : MonoBehaviour
     public AudioClip CreditSong;
     public string CreditName;
 
+
+    public void Play_UISelect() => Instantiate(UI_Select, Vector3.zero, Quaternion.identity);
 
     public void Play_UIClick() => Instantiate(UI_Click, Vector3.zero, Quaternion.identity);
     public void Play_UIFlick() => Instantiate(UI_Flick, Vector3.zero, Quaternion.identity);
