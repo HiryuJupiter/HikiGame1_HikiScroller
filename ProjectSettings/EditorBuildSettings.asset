@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Production/Hallway.unity
     guid: 4b154f30e5d60a040a8ecd0b91b4442d
+  - enabled: 1
+    path: Assets/Scenes/Frozen Acorn Scenes/Flappy Drac.unity
+    guid: 06f400c41fd986744bb741eeb73ff1c0
   m_configObjects: {}

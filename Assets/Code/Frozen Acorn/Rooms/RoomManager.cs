@@ -12,4 +12,8 @@ public class RoomManager : MonoBehaviour {
     public void EnterBedroom() {
         SceneManager.LoadScene(1);
     }
+
+    public void PlayFlappyDrac() {
+        SceneManager.LoadScene(3);
+    }
 }
