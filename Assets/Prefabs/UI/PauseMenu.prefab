@@ -384,8 +384,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8020103642893106093}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: ToQuitConfirm
+        m_TargetAssemblyTypeName: PauseMenuUI, Assembly-CSharp
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1059,6 +1059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c743356a1b75b3d42916f616f0e1ef6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuLevelIndex: 0
   timeBeforeEnabled: 1
   pauseMenu: {fileID: 8020103642893102592}
   blackScreen: {fileID: 6424694234395243097}

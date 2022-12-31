@@ -893,6 +893,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7403296613149291153, guid: 5ff7b3b0cf89df3459563e2a3e8fbbe5, type: 3}
+      propertyPath: m_Text
+      value: 'ThisMan
+
+        Peroroncino'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7403296613782845287, guid: 5ff7b3b0cf89df3459563e2a3e8fbbe5, type: 3}
+      propertyPath: m_Text
+      value: 'ThisMan
+
+        l5hope
+
+        Eburin loves Seiko'
+      objectReference: {fileID: 0}
     - target: {fileID: 9033804733002851865, guid: 5ff7b3b0cf89df3459563e2a3e8fbbe5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -988,6 +1002,10 @@ PrefabInstance:
     - target: {fileID: 9033804733317326153, guid: 5ff7b3b0cf89df3459563e2a3e8fbbe5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033804733347158602, guid: 5ff7b3b0cf89df3459563e2a3e8fbbe5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9033804733835522735, guid: 5ff7b3b0cf89df3459563e2a3e8fbbe5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

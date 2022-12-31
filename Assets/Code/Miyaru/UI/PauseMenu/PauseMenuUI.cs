@@ -54,6 +54,10 @@ public class PauseMenuUI : MonoBehaviour
         }            
     }
 
+    public void Quit() {
+        Application.Quit();
+    }
+
     public void TogglePause()
     {
         if (!interactable)

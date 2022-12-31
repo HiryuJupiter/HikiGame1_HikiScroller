@@ -14,6 +14,8 @@ public class Drac : MonoBehaviour {
     public UnityEvent onDeath;
 
     bool dead;
+    public AudioSource audioSource;
+    public AudioClip tapClip;
 
     void Awake() {
         rb = GetComponent<Rigidbody2D>();
@@ -29,6 +31,8 @@ public class Drac : MonoBehaviour {
     void Update() {
         if(!dead && Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) {
             rb.velocity = Vector2.up * velocity;
+            audioSource.pitch = Random.Range(1.3f, 1.8f);
+            audioSource.PlayOneShot(tapClip);
         }
     }
 
